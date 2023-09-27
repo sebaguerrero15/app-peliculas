@@ -8,7 +8,6 @@ const Peliculas = () => {
 
   const urlPeliculas = `https://api.themoviedb.org/3/movie/top_rated?language=es-MX&page=${nextPage}`;
   
-
   const options = {
     method: "GET",
     headers: {
@@ -59,13 +58,13 @@ const Peliculas = () => {
         <button
           onClick={prevPage}
           disabled={nextPage === 1}
-          className="bg-red-800 uppercase font-light p-2 rounded-lg fontpelicula"
+          className="bg-red-800 uppercase hover:bg-red-700 font-light p-2 rounded-lg fontpelicula cursor-pointer"
         >
           Página Anterior
         </button>
         <button
           onClick={getNextPage}
-          className="bg-red-800 uppercase font-light p-2 rounded-lg fontpelicula"
+          className="bg-red-800 uppercase hover:bg-red-700 font-light p-2 rounded-lg fontpelicula cursor-pointer"
         >
           Siguiente Página
         </button>

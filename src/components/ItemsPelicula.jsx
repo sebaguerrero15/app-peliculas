@@ -1,9 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Modal from "react-modal";
+import { addItem } from "../store/peliculasSlice";
+import { useDispatch } from 'react-redux';
 
 const ItemsPelicula = ({ title, poster_path, id, pelicula }) => {
   const [peliculaSeleccionada, setPeliculaSeleccionada] = useState();
   const [modal, setModal] = useState(false);
+
+  const dispatch = useDispatch();
 
   const path_imagen = "https://image.tmdb.org/t/p/w500";
 
@@ -19,6 +23,11 @@ const ItemsPelicula = ({ title, poster_path, id, pelicula }) => {
     },
   };
 
+  const handleAddPelicula = (peliculaSeleccionada) => {
+    dispatch(addItem(peliculaSeleccionada));
+  };
+
+ 
   const openModal = (pelicula) => {
     setModal(true);
     setPeliculaSeleccionada(pelicula);
@@ -78,8 +87,11 @@ const ItemsPelicula = ({ title, poster_path, id, pelicula }) => {
             >
               Cerrar
             </button>
-            <button className="border p-2 mt-5 rounded-md uppercase bg-cyan-700 text-white hover:bg-cyan-900 font-bold">
-              Ver Trailer
+            <button 
+            className="border p-2 mt-5 rounded-md uppercase bg-cyan-700 text-white hover:bg-cyan-900 font-bold"
+            onClick={() => handleAddPelicula(peliculaSeleccionada)}
+            >
+              Añadir a Favoritos
             </button>
           </div>
         </Modal>

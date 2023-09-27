@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-import { AiOutlineSearch } from "react-icons/ai";
-import { BiUserCircle } from "react-icons/bi";
+import { FaRegHeart } from "react-icons/fa";
+
 
 const Navbar = () => {
-
 
 
   return (
@@ -16,7 +15,7 @@ const Navbar = () => {
           >
             Streaming Movies
           </Link>
-          <div className="flex ml-10 space-x-4">
+          <div className="flex items-center ml-10 space-x-4">
             <Link to={"/peliculas"} className="text-xl hover:border-b hover:border-red-500">
               Top Películas
             </Link>
@@ -26,15 +25,18 @@ const Navbar = () => {
             <Link to={"/buscarpelicula"} className="text-xl hover:border-b hover:border-red-500">
               Buscar Peliculas
             </Link>
+            <Link to={"/favoritos"} className="flex items-center gap-1 text-xl hover:border-b hover:border-red-500">
+              Favoritos <FaRegHeart />
+            </Link>
           </div>
         </div>
 
         <div className="flex justify-end items-center gap-4 mx-5">
           
-          <button>Log in</button>
+          {/* <button>Log in</button>
           <span className="text-2xl hover:cursor-pointer">
             <BiUserCircle />
-          </span>
+          </span> */}
         </div>
       </nav>
     </>
