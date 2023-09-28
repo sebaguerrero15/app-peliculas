@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
 const peliculasSlice = createSlice({
   name: "lista",
   initialState: [],
@@ -8,9 +9,7 @@ const peliculasSlice = createSlice({
       state.push(action.payload);
     },
     deleteItem: (state, action) => {
-      return state.filter(
-        (peliculas) => peliculas.id !== action.payload.id
-      );
+      return state.filter((peliculas) => peliculas.id !== action.payload.id);
     },
   },
 });

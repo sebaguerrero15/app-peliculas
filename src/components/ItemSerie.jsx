@@ -53,10 +53,7 @@ const ItemSerie = ({title, poster_path, id, serie, name}) => {
     <p className="flex justify-center fontpelicula font-light text-md">
       {serieSeleccionada.overview}
     </p>
-    <p className="text-lg">
-      <span className="font-semibold">Fecha Estreno: </span>
-      {serieSeleccionada.release_date}
-    </p>
+    
 
     <p className="flex justify-center font-semibold text-lg">
       Vote: {serieSeleccionada.vote_average} 🎬
